@@ -59,7 +59,7 @@ def html_gen(seq_seg):
     print("<head>")
     # define style
     print("<style>")
-    print("* {color:white; font-family:'Courier New';}") #Lucida Console is another good monospace font
+    print("* {font-family:'Courier New';}") #Lucida Console is another good monospace font
     print("strong {color:red;}") # matches appear bold and red
     print(".num {text-align:right;}") # numbers are aligned to the right of each cell
     print(".seq {font-size:18px;}") # increase font from default (16px)
