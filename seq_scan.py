@@ -5,7 +5,7 @@ def insert_tags(idx, seq):
     insert_idx = itr(idx, seq)
     
     # string slicing
-    #         [start of str up to char)   <open tag>   [character in motif]   <close tag>   [char+1 to end of string]
+    #    [start of str - char)   <open tag>   [char in motif]   <close tag>   [char+1 - end of string]
     tagd = seq[: (insert_idx)] + "<strong>" + seq[insert_idx] + "</strong>" + seq[(insert_idx+1) :]
     
     return tagd
@@ -54,7 +54,7 @@ def split(num, seq_tagd):
 # use hijacked stdout and print straight to output file
 # html doesn't care about indents or whitespace so neither do I
 # could this have been done more elegantly? yes, but it does the job and I'm tired
-def html_gen(seq_seg):
+def html_gen(seq_seg, match_list):
     print("<html>")
     print("<head>")
     # define style
@@ -85,6 +85,12 @@ def html_gen(seq_seg):
             print("<tr>")
         print("<td class='seq'>{}</td>".format(seg))
     print("</tr>")
+    print("</table>")
+    print("<br>")
+    print("<table>")
+    print("<tr>Match List</tr>")
+    for match in match_list:
+            print("<tr><td>{}</td></tr>".format(match))
     print("</table>")
     print("</body>")
     print("</html>")
