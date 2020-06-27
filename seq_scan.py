@@ -1,5 +1,5 @@
 # inserts html tags directly before and after a specific character
-# in the protein sequence as specified by index argument
+# in the sequence as specified by index argument
 def insert_tags(idx, seq):
     # find index to insert tags at - account for inserted tags
     insert_idx = itr(idx, seq)
@@ -14,7 +14,7 @@ def insert_tags(idx, seq):
 # in order to preserve original sequence char indexes
 def itr(idx, seq):
     
-    # track true_idx (characters protein in sequence) and offset (characters in tags)
+    # track true_idx (characters in sequence) and offset (characters in tags)
     offset = 0
     true_idx = 0
     
